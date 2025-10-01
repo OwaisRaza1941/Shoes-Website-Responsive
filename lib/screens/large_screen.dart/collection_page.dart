@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/screens/widgets/hero_banner.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collection_page_card.dart';
 import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collectionpage_text.dart';
 
 class CollectionPage extends StatelessWidget {
@@ -17,8 +19,16 @@ class CollectionPage extends StatelessWidget {
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [CollectionpageText(size: size),  Container()  ],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CollectionpageText(size: size),
+                CollectionPageCard(),
+              ],
             ),
+            SizedBox(height: 100),
+            HeroBanner(),
+
+            SizedBox(height: 50),
           ],
         ),
       ),

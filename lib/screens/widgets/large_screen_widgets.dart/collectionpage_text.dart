@@ -10,7 +10,6 @@ class CollectionpageText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: size.width * 0.3,
-      height: 500,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
