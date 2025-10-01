@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collectionpage_text.dart';
 
 class CollectionPage extends StatelessWidget {
   const CollectionPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
       width: double.infinity,
       color: Colors.white,
-      child: Column(
-        children: [Container(color: Colors.yellow, width: 200, height: 200)],
+      child: Padding(
+        padding: EdgeInsets.only(top: 100, left: 40, right: 40),
+        child: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [CollectionpageText(size: size),  Container()  ],
+            ),
+          ],
+        ),
       ),
     );
   }

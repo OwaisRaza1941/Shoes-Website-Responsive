@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoes_website/screens/widgets/custom_buttons.dart';
 
 class SocialSection extends StatelessWidget {
   final Size size;
@@ -34,14 +35,10 @@ class SocialSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white,
-              backgroundColor: Colors.black,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-            ),
-            onPressed: () {},
-            child: Text("Shop Now"),
+          CustomButtons(
+            btnForgratedColor: Colors.white,
+            buttonBGColor: Colors.black,
+            buttonText: "Shop Now",
           ),
         ],
       ),
