@@ -14,7 +14,7 @@ class CollectionPage extends StatelessWidget {
       width: double.infinity,
       color: Colors.white,
       child: Padding(
-        padding: EdgeInsets.only(top: 100, left: 40, right: 40),
+        padding: EdgeInsets.only(top: 100, left: 40, right: 40, bottom: 20),
         child: Column(
           children: [
             Row(
@@ -27,8 +27,6 @@ class CollectionPage extends StatelessWidget {
             ),
             SizedBox(height: 100),
             HeroBanner(),
-
-            SizedBox(height: 50),
           ],
         ),
       ),

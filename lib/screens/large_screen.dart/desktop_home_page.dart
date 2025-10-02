@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_website/screens/large_screen.dart/collection_page.dart';
+import 'package:shoes_website/screens/large_screen.dart/customize_page.dart';
+import 'package:shoes_website/screens/large_screen.dart/footer.dart';
+import 'package:shoes_website/screens/large_screen.dart/shop_page.dart';
 import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/bottom_slide.dart';
 import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/hero_section.dart';
 import 'package:shoes_website/screens/widgets/navbar.dart';
@@ -16,7 +19,15 @@ class DesktopHomePage extends StatelessWidget {
       decoration: Styles.gradeintDecoration,
       child: SingleChildScrollView(
         child: Column(
-          children: [Navbar(), HeroSection(), BottomSlide(), CollectionPage()],
+          children: [
+            Navbar(),
+            HeroSection(),
+            BottomSlide(),
+            CollectionPage(),
+            ShopPage(),
+            CustomizePage(),
+            Footer(),
+          ],
         ),
       ),
     );
