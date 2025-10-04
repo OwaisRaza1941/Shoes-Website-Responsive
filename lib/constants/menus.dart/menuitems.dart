@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_website/constants/styles.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
+import 'package:shoes_website/screens/widgets/hover_text_button.dart';
+import 'package:shoes_website/utils/scroll_helper.dart';
 
 class Menuitems extends StatelessWidget {
   const Menuitems({super.key});
@@ -9,54 +12,44 @@ class Menuitems extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // Left side: Logo
-        Text("Slick", style: Styles.logoNavBar),
+        Text("Slick", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
 
-        // Center: Menu Items
+        // Center Menu
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
-              onPressed: () {},
-              child: Text("Home", style: Styles.menuItem),
+            HoverTextButton(
+              text: "Home",
+              onPressed: () => ScrollHelper.scrollToSection(AppKeys.homeKey),
             ),
             SizedBox(width: 30),
-            TextButton(
-              onPressed: () {},
-              child: Text("Shop", style: Styles.menuItem),
+            HoverTextButton(
+              text: "Shop",
+              onPressed: () => ScrollHelper.scrollToSection(AppKeys.shopKey),
             ),
             SizedBox(width: 30),
-            TextButton(
-              onPressed: () {},
-              child: Text("Collection", style: Styles.menuItem),
+            HoverTextButton(
+              text: "Collection",
+              onPressed: () => ScrollHelper.scrollToSection(AppKeys.collectionKey),
             ),
             SizedBox(width: 30),
-            TextButton(
-              onPressed: () {},
-              child: Text("Customize", style: Styles.menuItem),
+            HoverTextButton(
+              text: "Customize",
+              onPressed: () => ScrollHelper.scrollToSection(AppKeys.customizeKey),
             ),
           ],
         ),
 
-        // Right side: Icons
+        // Right side icons
         Row(
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search),
-              color: Colors.black,
-            ),
+            IconButton(onPressed: () {}, icon: Icon(Icons.search, color: Colors.black)),
+            SizedBox(width: 20),
+            IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined, color: Colors.black)),
             SizedBox(width: 20),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.shopping_cart_outlined),
-              color: Colors.black,
-            ),
-            SizedBox(width: 20),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.menu),
-              color: Colors.black,
+              icon: FaIcon(FontAwesomeIcons.barsProgress, color: Colors.black),
             ),
           ],
         ),

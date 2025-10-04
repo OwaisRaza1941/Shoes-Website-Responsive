@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoes_website/screens/widgets/custom_buttons.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
+import 'package:shoes_website/screens/widgets/hover_button.dart';
 
 class ShopPage extends StatelessWidget {
   ShopPage({super.key});
@@ -27,6 +28,7 @@ class ShopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      key: AppKeys.shopKey,
       width: double.infinity,
       color: Colors.white,
       child: Padding(
@@ -58,26 +60,10 @@ class ShopPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  CustomButtons(
-                    buttonText: "Man",
-                    buttonBGColor: Colors.black,
-                    btnForgratedColor: Colors.white,
-                  ),
-                  CustomButtons(
-                    buttonText: "Woman",
-                    buttonBGColor: Colors.white,
-                    btnForgratedColor: Colors.black,
-                  ),
-                  CustomButtons(
-                    buttonText: "Boy",
-                    buttonBGColor: Colors.white,
-                    btnForgratedColor: Colors.black,
-                  ),
-                  CustomButtons(
-                    buttonText: "Child",
-                    buttonBGColor: Colors.white,
-                    btnForgratedColor: Colors.black,
-                  ),
+                  HoverButton(text: "Man", onPressed: () {}),
+                  HoverButton(text: "Woman", onPressed: () {}),
+                  HoverButton(text: "Boy", onPressed: () {}),
+                  HoverButton(text: "Child", onPressed: () {}),
                 ],
               ),
             ),

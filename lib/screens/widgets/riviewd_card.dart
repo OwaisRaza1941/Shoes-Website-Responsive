@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ReviewCard extends StatelessWidget {
   final Size size;
-  const ReviewCard({super.key, required this.size});
+  final String? imagePath;
+  const ReviewCard({super.key, required this.size, this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +27,25 @@ class ReviewCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            "assets/images/girl_pic.png",
-            width: 250,
-            height: 250,
-            fit: BoxFit.contain,
-          ),
+          // 👇 Check agar imagePath null nahi hai to image dikhaye
+          if (imagePath != null)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                imagePath!,
+                width: 100,
+                height: 150,
+                fit: BoxFit.cover,
+              ),
+            ),
 
-          const SizedBox(width: 16),
+          if (imagePath != null)
+            const SizedBox(width: 50), // space only if image present
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment:
-                  MainAxisAlignment.center, // 👈 vertically center
+              mainAxisAlignment: MainAxisAlignment.center, // vertically center
               children: [
                 const Text(
                   "Meythli Odex",
@@ -61,13 +68,13 @@ class ReviewCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.",
+                  "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Lorem Ipsum Dolor Sit Amet.",
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.black54,
                     decoration: TextDecoration.none,
                   ),
-                  maxLines: 2, // 👈 text overflow control
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
               ],

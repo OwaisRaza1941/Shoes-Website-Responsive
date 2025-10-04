@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/screens/widgets/hero_banner.dart';
 import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collection_page_card.dart';
 import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collectionpage_text.dart';
@@ -11,6 +12,7 @@ class CollectionPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
+      key: AppKeys.collectionKey,
       width: double.infinity,
       color: Colors.white,
       child: Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoes_website/screens/widgets/custom_text.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -14,8 +15,9 @@ class Footer extends StatelessWidget {
       color: Colors.black,
       child: Padding(
         padding: EdgeInsets.only(top: 100, left: 40, right: 40),
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
               width: size.width * 0.2,
@@ -63,6 +65,76 @@ class Footer extends StatelessWidget {
                         size: 30,
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              width: size.width * 0.3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Subscribe to our news latter",
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    width: 300,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Enter your email",
+                        hintStyle: TextStyle(color: Colors.black),
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 255, 255, 255),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              width: size.width * 0.2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Quick Link's",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  CustomText(text: "Home", fontSize: 12, color: Colors.white),
+                  CustomText(text: "Shop", fontSize: 12, color: Colors.white),
+                  CustomText(
+                    text: "Collection",
+                    fontSize: 12,
+                    color: Colors.white,
+                  ),
+                  CustomText(
+                    text: "Contact",
+                    fontSize: 12,
+                    color: Colors.white,
+                  ),
+                  CustomText(
+                    text: "Privacy",
+                    fontSize: 12,
+                    color: Colors.white,
                   ),
                 ],
               ),

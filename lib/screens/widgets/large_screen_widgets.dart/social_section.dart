@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoes_website/screens/widgets/custom_buttons.dart';
+import 'package:shoes_website/screens/widgets/hover_button.dart';
 
 class SocialSection extends StatelessWidget {
   final Size size;
@@ -35,11 +35,7 @@ class SocialSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          CustomButtons(
-            btnForgratedColor: Colors.white,
-            buttonBGColor: Colors.black,
-            buttonText: "Shop Now",
-          ),
+          HoverButton(text: "Shop Now", onPressed: () {}),
         ],
       ),
     );

@@ -20,10 +20,7 @@ class Styles {
 
   static final menuItem = GoogleFonts.poppins(
     fontSize: 18,
-    fontWeight:
-        FontWeight.w400, // w100 bohot patla hota hai, w400 normal hota hai
-    color: Colors.black,
-    decoration: TextDecoration.none, // underline hatao
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.none,
   );
-  
 }

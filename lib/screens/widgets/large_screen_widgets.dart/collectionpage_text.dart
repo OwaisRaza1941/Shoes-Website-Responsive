@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoes_website/screens/widgets/custom_buttons.dart';
 import 'package:shoes_website/screens/widgets/custom_text.dart';
+import 'package:shoes_website/screens/widgets/hover_button.dart';
 
 class CollectionpageText extends StatelessWidget {
   final Size size;
@@ -40,11 +40,7 @@ class CollectionpageText extends StatelessWidget {
             color: Colors.black,
           ),
           SizedBox(height: 20),
-          CustomButtons(
-            buttonText: "Explore",
-            buttonBGColor: Colors.black,
-            btnForgratedColor: Colors.white,
-          ),
+          HoverButton(text: "Explore", onPressed: () {}),
         ],
       ),
     );

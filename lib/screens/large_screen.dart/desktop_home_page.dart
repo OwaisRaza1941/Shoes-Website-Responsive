@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/screens/large_screen.dart/collection_page.dart';
 import 'package:shoes_website/screens/large_screen.dart/customize_page.dart';
 import 'package:shoes_website/screens/large_screen.dart/footer.dart';
@@ -13,21 +14,24 @@ class DesktopHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: Styles.gradeintDecoration,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Navbar(),
-            HeroSection(),
-            BottomSlide(),
-            CollectionPage(),
-            ShopPage(),
-            CustomizePage(),
-            Footer(),
-          ],
+    return Scaffold(
+      body: Container(
+        key: AppKeys.homeKey,
+        width: double.infinity,
+        height: double.infinity,
+        decoration: Styles.gradeintDecoration,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Navbar(),
+              HeroSection(),
+              BottomSlide(),
+              CollectionPage(),
+              ShopPage(),
+              CustomizePage(),
+              Footer(),
+            ],
+          ),
         ),
       ),
     );

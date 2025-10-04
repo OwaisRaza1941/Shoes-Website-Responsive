@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/screens/widgets/riviewd_card.dart';
 
 class CustomizePage extends StatelessWidget {
@@ -8,6 +9,7 @@ class CustomizePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      key: AppKeys.customizeKey,
       width: double.infinity,
       color: Colors.white,
       child: Padding(
@@ -37,7 +39,10 @@ class CustomizePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ReviewCard(size: size),
-                ReviewCard(size: size),
+                ReviewCard(
+                  size: size,
+                  imagePath: "assets/images/girls_riview.jpg",
+                ),
               ],
             ),
           ],
