@@ -4,9 +4,9 @@ import 'package:shoes_website/screens/large_screen.dart/collection_page.dart';
 import 'package:shoes_website/screens/large_screen.dart/customize_page.dart';
 import 'package:shoes_website/screens/large_screen.dart/footer.dart';
 import 'package:shoes_website/screens/large_screen.dart/shop_page.dart';
-import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/bottom_slide.dart';
-import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/hero_section.dart';
-import 'package:shoes_website/screens/widgets/navbar.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets/bottom_slide.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets/hero_section.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets/navbar.dart';
 import 'package:shoes_website/constants/styles.dart';
 
 class DesktopHomePage extends StatelessWidget {

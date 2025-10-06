@@ -23,4 +23,11 @@ class Styles {
     fontWeight: FontWeight.w400,
     decoration: TextDecoration.none,
   );
+
+  static final menuTexStyle = GoogleFonts.poppins(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+    decoration: TextDecoration.none,
+  );
 }

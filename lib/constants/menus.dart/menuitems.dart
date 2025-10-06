@@ -12,7 +12,10 @@ class Menuitems extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("Slick", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+        Text(
+          "Slick",
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
 
         // Center Menu
         Row(
@@ -30,12 +33,14 @@ class Menuitems extends StatelessWidget {
             SizedBox(width: 30),
             HoverTextButton(
               text: "Collection",
-              onPressed: () => ScrollHelper.scrollToSection(AppKeys.collectionKey),
+              onPressed: () =>
+                  ScrollHelper.scrollToSection(AppKeys.collectionKey),
             ),
             SizedBox(width: 30),
             HoverTextButton(
               text: "Customize",
-              onPressed: () => ScrollHelper.scrollToSection(AppKeys.customizeKey),
+              onPressed: () =>
+                  ScrollHelper.scrollToSection(AppKeys.customizeKey),
             ),
           ],
         ),
@@ -43,9 +48,15 @@ class Menuitems extends StatelessWidget {
         // Right side icons
         Row(
           children: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search, color: Colors.black)),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search, color: Colors.black),
+            ),
             SizedBox(width: 20),
-            IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined, color: Colors.black)),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
+            ),
             SizedBox(width: 20),
             IconButton(
               onPressed: () {},

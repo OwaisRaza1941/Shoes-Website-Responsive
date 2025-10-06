@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/screens/widgets/hero_banner.dart';
-import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collection_page_card.dart';
-import 'package:shoes_website/screens/widgets/large_screen_widgets.dart/collectionpage_text.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets/collection_page_card.dart';
+import 'package:shoes_website/screens/widgets/large_screen_widgets/collectionpage_text.dart';
 
 class CollectionPage extends StatelessWidget {
   const CollectionPage({super.key});
@@ -24,7 +24,7 @@ class CollectionPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CollectionpageText(size: size),
-                CollectionPageCard(),
+                CollectionPageCard(size: size),
               ],
             ),
             SizedBox(height: 100),
