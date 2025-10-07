@@ -5,23 +5,65 @@ class BottomSlide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      color: Colors.black,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          slideImages(imagePath: "assets/images/symbols.png"),
-          slideImages(imagePath: "assets/images/shopping.png"),
-          slideImages(imagePath: "assets/images/AJIO.png"),
-          slideImages(imagePath: "assets/images/symbols.png"),
-          slideImages(imagePath: "assets/images/shopping.png"),
-          slideImages(imagePath: "assets/images/AJIO.png"),
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double imageSize = 80; // default desktop image size
+        double containerHeight = 80;
+
+        // responsive breakpoints
+        if (constraints.maxWidth > 950) {
+          // Desktop
+          imageSize = 100;
+          containerHeight = 100;
+        } else if (constraints.maxWidth > 600) {
+          // Tablet
+          imageSize = 100;
+          containerHeight = 100;
+        } else {
+          // Mobile
+          imageSize = 50;
+          containerHeight = 100;
+        }
+
+        return Container(
+          width: double.infinity,
+          height: containerHeight,
+          color: Colors.black,
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              slideImages(
+                imagePath: "assets/images/symbols.png",
+                size: imageSize,
+              ),
+              slideImages(
+                imagePath: "assets/images/shopping.png",
+                size: imageSize,
+              ),
+              slideImages(imagePath: "assets/images/AJIO.png", size: imageSize),
+              slideImages(
+                imagePath: "assets/images/symbols.png",
+                size: imageSize,
+              ),
+              slideImages(
+                imagePath: "assets/images/shopping.png",
+                size: imageSize,
+              ),
+              slideImages(imagePath: "assets/images/AJIO.png", size: imageSize),
+            ],
+          ),
+        );
+      },
     );
   }
 
-  Image slideImages({required String imagePath}) =>
-      Image.asset(imagePath, width: 100, height: 100);
+  Widget slideImages({required String imagePath, required double size}) {
+    return Image.asset(
+      imagePath,
+      width: size,
+      height: size,
+      fit: BoxFit.contain, // ensures image doesn't stretch
+    );
+  }
 }

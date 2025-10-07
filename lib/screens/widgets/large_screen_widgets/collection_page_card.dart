@@ -13,15 +13,15 @@ class CollectionPageCard extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.arrow_back_ios),
-            const SizedBox(width: 30),
+            Icon(Icons.arrow_back_ios),
+            SizedBox(width: 30),
             ShoeCard(
               size: size,
               imagePath: "assets/images/collection_shoes1.png",
               price: "Rs. 2999.00",
               title: "Running canvas shoes",
             ),
-            const SizedBox(width: 20),
+            SizedBox(width: 20),
             ShoeCard(
               size: size,
               imagePath: "assets/images/collection_shoes2.png",
@@ -35,8 +35,8 @@ class CollectionPageCard extends StatelessWidget {
               price: "Rs. 2999.00",
               title: "Casual nike shoes",
             ),
-            const SizedBox(width: 30),
-            const Icon(Icons.arrow_forward_ios),
+            SizedBox(width: 30),
+            Icon(Icons.arrow_forward_ios),
           ],
         ),
       ),

@@ -19,20 +19,22 @@ class ShoeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        // 👇 Responsive height logic
         double cardHeight;
-        double cardWidht;
-        if (constraints.maxWidth < 600) {
-          cardHeight = 280;
-          cardWidht = 150; // Mobile view
-        } else if (constraints.maxWidth < 1000) {
-          cardHeight = 320;
-          cardWidht = 200; // Mobile view
-          // Tablet view
-        } else {
+        double cardWidth;
+
+        // 👇 Correct breakpoint logic
+        if (constraints.maxWidth > 950) {
+          // 🖥 Desktop
           cardHeight = size.height * 0.36;
-          cardWidht = size.width * 0.15; // Mobile view
-          // Desktop / Full screen
+          cardWidth = size.width * 0.15;
+        } else if (constraints.maxWidth > 600) {
+          // 💻 Tablet
+          cardHeight = size.height * 0.36;
+          cardWidth = size.width * 0.25;
+        } else {
+          // 📱 Mobile
+          cardHeight = size.height * 0.36;
+          cardWidth = size.width * 0.5;
         }
 
         return Card(
@@ -45,7 +47,7 @@ class ShoeCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             onTap: () {},
             child: Container(
-              width: cardWidht,
+              width: cardWidth,
               height: cardHeight,
               padding: const EdgeInsets.all(20),
               child: Column(
