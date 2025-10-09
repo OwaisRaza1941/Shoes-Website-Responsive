@@ -24,6 +24,7 @@ Hosting: GitHub Pages
 🔗 [View Website](https://owaisraza1941.github.io/Shoes-Website-Responsive/)
 
 <img width="1600" height="852" alt="Image" src="https://github.com/user-attachments/assets/4bf4828d-fa91-4e68-8e97-f8cc079522b5" />
+https://github.com/user-attachments/assets/338f960e-04cc-4123-bbe5-baf326829abd
 
 ✅ Responsive design for desktop, tablet, and mobile
 ✅ Modern and clean UI
