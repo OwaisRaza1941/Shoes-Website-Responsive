@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/constants/styles.dart';
+import 'package:shoes_website/utils/scroll_helper.dart';
 
 class MobileNavitems extends StatelessWidget {
   const MobileNavitems({super.key});
@@ -24,19 +26,27 @@ class MobileNavitems extends StatelessWidget {
           SizedBox(height: 16),
           ListTile(
             title: Text("Home", style: Styles.menuTexStyle),
-            onTap: () {},
+            onTap: () {
+              ScrollHelper.scrollToSection(AppKeys.homeKey);
+            },
           ),
           ListTile(
             title: Text("Shop", style: Styles.menuTexStyle),
-            onTap: () {},
+            onTap: () {
+              ScrollHelper.scrollToSection(AppKeys.shopKey);
+            },
           ),
           ListTile(
             title: Text("Collection", style: Styles.menuTexStyle),
-            onTap: () {},
+            onTap: () {
+              ScrollHelper.scrollToSection(AppKeys.collectionKey);
+            },
           ),
           ListTile(
             title: Text("Customize", style: Styles.menuTexStyle),
-            onTap: () {},
+            onTap: () {
+              ScrollHelper.scrollToSection(AppKeys.customizeKey);
+            },
           ),
         ],
       ),

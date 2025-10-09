@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoes_website/constants/menus.dart/app_keys.dart';
 import 'package:shoes_website/screens/widgets/hover_text_button.dart';
 import 'package:shoes_website/utils/scroll_helper.dart';
@@ -58,10 +57,7 @@ class Menuitems extends StatelessWidget {
               icon: Icon(Icons.shopping_cart_outlined, color: Colors.black),
             ),
             SizedBox(width: 20),
-            IconButton(
-              onPressed: () {},
-              icon: FaIcon(FontAwesomeIcons.barsProgress, color: Colors.black),
-            ),
+            IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
           ],
         ),
       ],

@@ -7,7 +7,7 @@ class ShopPage extends StatelessWidget {
   ShopPage({super.key});
 
   final List<String> shoeImages = [
-    "assets/images/owais1.png",
+    "assets/images/shop_shoes1.png",
     "assets/images/shop_shoes2.png",
     "assets/images/shop_shoes3.png",
     "assets/images/shop_shoes4.png",
@@ -26,7 +26,6 @@ class ShopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       key: AppKeys.shopKey,
       width: double.infinity,
@@ -56,9 +55,11 @@ class ShopPage extends StatelessWidget {
 
             SizedBox(height: 50),
             SizedBox(
-              width: 500,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              width: double.infinity,
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 10,
+                runSpacing: 20,
                 children: [
                   HoverButton(text: "Man", onPressed: () {}),
                   HoverButton(text: "Woman", onPressed: () {}),
@@ -68,119 +69,133 @@ class ShopPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 50),
-            Wrap(
-              spacing: 100,
-              runSpacing: 20,
-              children: List.generate(6, (index) {
-                return SizedBox(
-                  width: size.width * 0.20, // exact width
-                  height: size.height * 0.43, // exact height
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(43, 158, 158, 158),
-                      border: Border.all(color: Colors.grey.withAlpha(300)),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 40),
-                      child: Stack(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(5),
-                                bottomRight: Radius.circular(5),
-                              ),
-                            ),
-                            child: Text(
-                              "New",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                decoration: TextDecoration.none,
-                              ),
-                            ),
-                          ),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                double cardWidth;
+                double cardHeight;
+                double spacing;
 
-                          Center(
-                            child: SizedBox(
-                              height: size.height * 0.35,
-                              width: double.infinity,
-                              child: Image.asset(
-                                shoeImages[index],
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 20,
-                            right: 20,
-                            bottom: 70,
-                            child: Text(
-                              shoesText[index],
-                              style: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                decoration: TextDecoration.none,
-                              ),
-                            ),
-                          ),
+                if (constraints.maxWidth > 950) {
+                  cardWidth = constraints.maxWidth * 0.25;
+                  cardHeight = 300;
+                  spacing = 60;
+                } else if (constraints.maxWidth > 600) {
+                  cardWidth = constraints.maxWidth * 0.35;
+                  cardHeight = 380;
+                  spacing = 40;
+                } else {
+                  cardWidth = 300;
+                  cardHeight = 290;
+                  spacing = 20;
+                }
 
-                          Positioned(
-                            bottom: 30,
-                            right: 20,
-                            left: 20,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Text(
-                                  "₹2999.00",
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w600,
+                return Wrap(
+                  spacing: spacing,
+                  runSpacing: 20,
+                  alignment: WrapAlignment.center,
+                  children: List.generate(6, (index) {
+                    return SizedBox(
+                      width: cardWidth,
+                      height: cardHeight,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(43, 158, 158, 158),
+                          border: Border.all(color: Colors.grey.withAlpha(300)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 40),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(5),
+                                    bottomRight: Radius.circular(5),
+                                  ),
+                                ),
+                                child: Text(
+                                  "New",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
                                     decoration: TextDecoration.none,
                                   ),
                                 ),
-                                SizedBox(width: 5),
-                                Text(
-                                  "₹4999.00",
+                              ),
+
+                              SizedBox(
+                                height: cardHeight * 0.45,
+                                width: double.infinity,
+                                child: Image.asset(
+                                  shoeImages[index],
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Text(
+                                  shoesText[index],
                                   style: GoogleFonts.poppins(
-                                    fontSize: 14,
                                     color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    decoration: TextDecoration.lineThrough,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    decoration: TextDecoration.none,
                                   ),
                                 ),
-                                SizedBox(width: 60),
-                                Material(
-                                  color: Colors.black,
-                                  shape: const CircleBorder(),
-                                  child: InkWell(
-                                    customBorder: const CircleBorder(),
-                                    onTap: () {},
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(6),
-                                      child: Icon(
+                              ),
+
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "₹2999.00",
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                    Text(
+                                      "₹4999.00",
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                        decoration: TextDecoration.lineThrough,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      style: IconButton.styleFrom(
+                                        backgroundColor: Colors.black,
+                                        shape: CircleBorder(),
+                                      ),
+                                      onPressed: () {},
+                                      icon: Icon(
                                         Icons.arrow_outward,
                                         color: Colors.white,
                                         size: 16,
                                       ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  }),
                 );
-              }),
+              },
             ),
           ],
         ),

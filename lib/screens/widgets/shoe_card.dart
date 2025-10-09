@@ -17,89 +17,74 @@ class ShoeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        double cardHeight;
-        double cardWidth;
+    double screenWidth = MediaQuery.of(context).size.width;
 
-        // 👇 Correct breakpoint logic
-        if (constraints.maxWidth > 950) {
-          // 🖥 Desktop
-          cardHeight = size.height * 0.36;
-          cardWidth = size.width * 0.15;
-        } else if (constraints.maxWidth > 600) {
-          // 💻 Tablet
-          cardHeight = size.height * 0.36;
-          cardWidth = size.width * 0.25;
-        } else {
-          // 📱 Mobile
-          cardHeight = size.height * 0.36;
-          cardWidth = size.width * 0.5;
-        }
+    double cardHeight;
+    double cardWidth;
 
-        return Card(
-          elevation: 3,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-            side: BorderSide(color: Colors.grey.shade300, width: 1),
+    if (screenWidth > 950) {
+      cardHeight = 250;
+      cardWidth = screenWidth * 0.15;
+    } else if (screenWidth > 600) {
+      cardHeight = size.height * 0.36;
+      cardWidth = screenWidth * 0.25;
+    } else {
+      cardHeight = size.height * 0.36;
+      cardWidth = screenWidth * 0.5;
+    }
+
+    return Container(
+      width: cardWidth,
+      height: cardHeight,
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey, width: 1),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 6,
+            child: Center(child: Image.asset(imagePath, fit: BoxFit.contain)),
           ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(12),
-            onTap: () {},
-            child: Container(
-              width: cardWidth,
-              height: cardHeight,
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 6,
-                    child: Center(
-                      child: Image.asset(imagePath, fit: BoxFit.contain),
+          SizedBox(height: 8),
+          CustomText(
+            text: title,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          ),
+          SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomText(
+                text: price,
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+              Material(
+                color: Colors.black,
+                shape: CircleBorder(),
+                child: InkWell(
+                  customBorder: CircleBorder(),
+                  onTap: () {},
+                  child: Padding(
+                    padding: EdgeInsets.all(6),
+                    child: Icon(
+                      Icons.arrow_outward,
+                      color: Colors.white,
+                      size: 16,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  CustomText(
-                    text: title,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                  const SizedBox(height: 5),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomText(
-                        text: price,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                      Material(
-                        color: Colors.black,
-                        shape: const CircleBorder(),
-                        child: InkWell(
-                          customBorder: const CircleBorder(),
-                          onTap: () {},
-                          child: const Padding(
-                            padding: EdgeInsets.all(6),
-                            child: Icon(
-                              Icons.arrow_outward,
-                              color: Colors.white,
-                              size: 16,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
