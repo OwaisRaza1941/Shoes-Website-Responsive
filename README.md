@@ -1,16 +1,33 @@
 # shoes_website
 
-A new Flutter project.
+👟 Shoes Website - Responsive Flutter Web App
 
-## Getting Started
+🚀 A fully responsive and modern e-commerce UI built with Flutter Web.
+This project showcases a beautiful shoe store layout with multiple sections like Home, Shop, Collection, Contact, and Footer — all optimized for different screen sizes (desktop, tablet, and mobile).
 
-This project is a starting point for a Flutter application.
+🛠️ Tech Stack
 
-A few resources to get you started if this is your first Flutter project:
+Framework: Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Language: Dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+UI: Responsive Layouts with Flex, MediaQuery & LayoutBuilder
+
+Icons: FontAwesome & Cupertino Icons
+
+Fonts: Google Fonts
+
+Hosting: GitHub Pages
+
+🌐 Live Demo
+
+🔗 [View Website](https://owaisraza1941.github.io/Shoes-Website-Responsive/)
+
+<img width="1600" height="852" alt="Image" src="https://github.com/user-attachments/assets/4bf4828d-fa91-4e68-8e97-f8cc079522b5" />
+
+✅ Responsive design for desktop, tablet, and mobile
+✅ Modern and clean UI
+✅ Reusable custom widgets
+✅ Smooth hover animations
+✅ Newsletter section
+✅ Social media icons integration
